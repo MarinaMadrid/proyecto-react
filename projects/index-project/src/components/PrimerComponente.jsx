@@ -16,7 +16,7 @@ export const PrimerComponente = () => {
   ];
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
-  const [seleccionado, setSeleccionado] = useState(animales[0]);
+  const [seleccionado, setSeleccionado] = useState('');
   const [color, setColor] = useState('');
   const [nombreInput, setNombreInput] = useState('');
   const [mensajeError, setMensajeError] = useState('');
