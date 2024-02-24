@@ -32,6 +32,11 @@ export const PrimerComponente = () => {
   const [nombreInput, setNombreInput] = useState('');
   const [mensajeError, setMensajeError] = useState('');
 
+  // Función para capitalizar la primera letra
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   // Manejador de cambio para el input de nombre
   const handleNombreInputChange = (e) => {
     const nombre = e.target.value.toLowerCase(); // Convertir a minúsculas para hacer la comparación más flexible
@@ -88,7 +93,7 @@ export const PrimerComponente = () => {
             <h3 style={{ textAlign: 'center' }}>Nombres disponibles:</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {nombresDisponibles.map((nombre) => (
-                <li key={nombre}>{nombre}</li>
+                <li key={nombre}>{capitalizeFirstLetter(nombre)}</li>
               ))}
             </ul>
           </div>
