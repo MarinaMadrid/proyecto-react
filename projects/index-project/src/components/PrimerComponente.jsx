@@ -16,7 +16,7 @@ export const PrimerComponente = () => {
   ];
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
-  const [seleccionado, setSeleccionado] = useState(animales[0]);
+  const [seleccionado, setSeleccionado] = useState('');
   const [color, setColor] = useState('');
   const [nombreInput, setNombreInput] = useState('');
   const [mensajeError, setMensajeError] = useState('');
@@ -45,10 +45,10 @@ export const PrimerComponente = () => {
   // Renderizado del componente
   return (
     <div>
-      <h1>Animales fantásticos</h1>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <h1 style={{ textAlign: 'center' }}>Animales fantásticos</h1>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Columna para el input de nombre y el input de color */}
-        <div style={{ marginRight: '20px' }}>
+        <div style={{ marginRight: '20px', textAlign: 'center' }}>
           {/* Input para introducir el nombre del animal */}
           <div>
             <label htmlFor="nombreInput">Introduce el nombre del animal:</label>
@@ -73,9 +73,9 @@ export const PrimerComponente = () => {
           </div>
           <br />
           {/* Cuadro con los nombres disponibles */}
-          <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
-            <h3>Nombres disponibles:</h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+          <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px', textAlign: 'left' }}>
+            <h3 style={{ textAlign: 'center' }}>Nombres disponibles:</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {animales.map((animal) => (
                 <li key={animal.id}>{animal.nombre}</li>
               ))}
@@ -83,13 +83,13 @@ export const PrimerComponente = () => {
           </div>
         </div>
         {/* Visualización del animal seleccionado con el color elegido */}
-        <div>
+        <div style={{ textAlign: 'center' }}>
           <h2>{seleccionado.nombre}</h2>
           <img
             src={seleccionado.imagen}
             alt={seleccionado.nombre}
             style={{
-              boxShadow: `0 0 20px ${color}`, // Aumenté el valor a 20px para intensificar el borde
+              boxShadow: `0 0 30px ${color}`,
               width: '100vh',
               height: '90vh',
             }}
