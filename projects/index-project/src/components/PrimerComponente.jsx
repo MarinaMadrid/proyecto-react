@@ -22,7 +22,7 @@ export const PrimerComponente = () => {
   // Excluyendo la opción con la id 6 de los nombres disponibles
   const nombresDisponibles = animales
     .filter((animal) => animal.id !== 6)
-    .map((animal) => animal.nombre);
+    .map((animal) => animal.nombre.replace(/_/g, ' ')); // Reemplazar guiones bajos con espacios
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
   const [seleccionado, setSeleccionado] = useState(animales[5]);
@@ -93,7 +93,7 @@ export const PrimerComponente = () => {
         </div>
         {/* Visualización del animal seleccionado con el color elegido */}
         <div style={{ textAlign: 'center' }}>
-          <h2>{seleccionado.nombre}</h2>
+          <h2>{seleccionado.nombre.replace(/_/g, ' ')}</h2> {/* Reemplazar guiones bajos con espacios */}
           <img
             src={seleccionado.imagen}
             alt={seleccionado.nombre}
