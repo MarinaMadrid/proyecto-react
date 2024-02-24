@@ -21,7 +21,7 @@ export const PrimerComponente = () => {
     { id: 6, nombre: 'Medusa', imagen: OIG13 },
   ];
 
-  // Excluyendo la opción con la id 1 de los nombres disponibles
+  // Excluyendo la opción con la id 0 de los nombres disponibles
   const nombresDisponibles = animales
     .filter((animal) => animal.id !== 0)
     .map((animal) => animal.nombre.toLowerCase());
@@ -87,7 +87,7 @@ export const PrimerComponente = () => {
             />
           </div>
           <br />
-          {/* Cuadro con los nombres disponibles (sin la opción con id 1) */}
+          {/* Cuadro con los nombres disponibles (sin la opción con id 0) */}
           <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px', textAlign: 'left' }}>
             <h3 style={{ textAlign: 'center' }}>Nombres disponibles:</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
