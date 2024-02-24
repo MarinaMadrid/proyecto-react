@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 
+import OIG1 from '../assets/image/OIG1.jpeg';
+import OIG2 from '../assets/image/OIG2.jpeg';
+// import FrankensteinImage from './assets/frankenstein.jpg';
+
 export const SegundoComponente = () => {
   const monstruos = [
-    { id: 1, nombre: 'Godzilla', imagen: 'godzilla.jpg' },
-    { id: 2, nombre: 'Drácula', imagen: 'dracula.jpg' },
-    { id: 3, nombre: 'Frankenstein', imagen: 'frankenstein.jpg' },
+    { id: 1, nombre: 'Dragón', imagen: OIG1 },
+    { id: 2, nombre: 'Dragones', imagen: OIG2 },
+    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
   ];
 
   const [seleccionado, setSeleccionado] = useState(monstruos[0]);
@@ -22,7 +26,7 @@ export const SegundoComponente = () => {
 
   return (
     <div>
-      <h1>Monstruos App - SegundoComponente</h1>
+      <h1>Monstruos</h1>
       <div>
         <label htmlFor="monstruoSelect">Selecciona un monstruo:</label>
         <select id="monstruoSelect" onChange={handleSelectChange} value={seleccionado.id}>
@@ -45,7 +49,7 @@ export const SegundoComponente = () => {
       <div>
         <h2>{seleccionado.nombre}</h2>
         <img
-          src={require(`./assets/${seleccionado.imagen}`).default}
+          src={seleccionado.imagen}
           alt={seleccionado.nombre}
           style={{ border: `5px solid ${color}` }}
         />
