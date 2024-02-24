@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 import OIG1 from '../assets/image/OIG1.jpeg';
 import OIG2 from '../assets/image/OIG2.jpeg';
-// import FrankensteinImage from './assets/frankenstein.jpg';
+import OIG3 from '../assets/image/OIG3.jpeg';
 
 export const SegundoComponente = () => {
   const monstruos = [
     { id: 1, nombre: 'Dragón', imagen: OIG1 },
     { id: 2, nombre: 'Dragones', imagen: OIG2 },
-    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
+    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG2 },
   ];
 
   const [seleccionado, setSeleccionado] = useState(monstruos[0]);
