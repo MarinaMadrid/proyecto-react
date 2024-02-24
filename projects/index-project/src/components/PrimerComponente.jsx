@@ -89,7 +89,7 @@ export const PrimerComponente = () => {
             src={seleccionado.imagen}
             alt={seleccionado.nombre}
             style={{
-              boxShadow: `0 0 20px ${color}`, // Aumenté el valor a 20px para intensificar el borde
+              boxShadow: `0 0 30px ${color}`, // Aumenté el valor a 30px para intensificar el borde aún más
               width: '100vh',
               height: '90vh',
             }}
