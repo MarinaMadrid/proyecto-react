@@ -61,7 +61,6 @@ export const PrimerComponente = () => {
   // Renderizado del componente
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Animales fantásticos</h1>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Columna para el input de nombre y el input de color */}
         <div style={{ marginRight: '20px', textAlign: 'center' }}>
@@ -99,7 +98,8 @@ export const PrimerComponente = () => {
           </div>
         </div>
         {/* Visualización del animal seleccionado con el color elegido */}
-        <div style={{ textAlign: 'center' }}>
+        <div>
+          <h1>Animales fantásticos</h1>
           <h2>{seleccionado.nombre}</h2>
           <img
             src={seleccionado.imagen}
