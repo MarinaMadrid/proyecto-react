@@ -15,14 +15,14 @@ export const PrimerComponente = () => {
     { id: 2, nombre: 'Hipogrifo', imagen: OIG5 },
     { id: 3, nombre: 'Unicornio', imagen: OIG6 },
     { id: 4, nombre: 'Sirena', imagen: OIG9 },
-    { id: 5, nombre: 'Caballito_de_mar', imagen: OIG10 },
-    { id: 6, nombre: 'No_hay_imagen', imagen: OIG12 },
+    { id: 5, nombre: 'Caballito de mar', imagen: OIG10 },
+    { id: 6, nombre: 'No hay imagen', imagen: OIG12 },
   ];
 
   // Excluyendo la opción con la id 6 de los nombres disponibles
   const nombresDisponibles = animales
     .filter((animal) => animal.id !== 6)
-    .map((animal) => animal.nombre.replace(/_/g, ' ')); // Reemplazar guiones bajos con espacios
+    .map((animal) => animal.nombre.toLowerCase());
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
   const [seleccionado, setSeleccionado] = useState(animales[5]);
@@ -32,11 +32,11 @@ export const PrimerComponente = () => {
 
   // Manejador de cambio para el input de nombre
   const handleNombreInputChange = (e) => {
-    const nombre = e.target.value;
+    const nombre = e.target.value.toLowerCase(); // Convertir a minúsculas para hacer la comparación más flexible
     setNombreInput(nombre);
 
     // Buscar el animal por nombre
-    const seleccion = animales.find((animal) => animal.nombre.toLowerCase() === nombre.toLowerCase());
+    const seleccion = animales.find((animal) => animal.nombre.toLowerCase() === nombre);
 
     if (seleccion) {
       setSeleccionado(seleccion);
@@ -93,7 +93,7 @@ export const PrimerComponente = () => {
         </div>
         {/* Visualización del animal seleccionado con el color elegido */}
         <div style={{ textAlign: 'center' }}>
-          <h2>{seleccionado.nombre.replace(/_/g, ' ')}</h2> {/* Reemplazar guiones bajos con espacios */}
+          <h2>{seleccionado.nombre}</h2>
           <img
             src={seleccionado.imagen}
             alt={seleccionado.nombre}
