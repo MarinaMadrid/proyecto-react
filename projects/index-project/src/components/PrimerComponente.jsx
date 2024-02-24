@@ -7,6 +7,7 @@ import OIG6 from '../assets/image/OIG6.jpg';
 import OIG9 from '../assets/image/OIG9.jpeg';
 import OIG10 from '../assets/image/OIG10.jpg';
 import OIG12 from '../assets/image/OIG12.jpeg';
+import OIG13 from '../assets/image/OIG13.jpg';
 
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
@@ -17,6 +18,7 @@ export const PrimerComponente = () => {
     { id: 4, nombre: 'Sirena', imagen: OIG9 },
     { id: 5, nombre: 'Caballito de mar', imagen: OIG10 },
     { id: 6, nombre: 'No hay imagen', imagen: OIG12 },
+    { id: 7, nombre: 'Medusa', imagen: OIG13 },
   ];
 
   // Excluyendo la opción con la id 6 de los nombres disponibles
