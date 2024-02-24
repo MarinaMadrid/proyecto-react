@@ -5,7 +5,7 @@ import OIG4 from '../assets/image/OIG4.jpeg';
 import OIG5 from '../assets/image/OIG5.jpg';
 import OIG6 from '../assets/image/OIG6.jpg';
 import OIG9 from '../assets/image/OIG9.jpeg';
-import OIG10 from '../assets/image/OIG10.jpg';
+import OIG10 from '../assets/image/OIG12.jpeg';
 
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
@@ -15,7 +15,7 @@ export const PrimerComponente = () => {
     { id: 3, nombre: 'Unicornio', imagen: OIG6 },
     { id: 4, nombre: 'Sirena', imagen: OIG9 },
     { id: 5, nombre: 'Caballito_de_mar', imagen: OIG10 },
-    //{ id: 6, nombre: 'No_hay_imagen', imagen: OIG11 },
+    { id: 6, nombre: 'No_hay_imagen', imagen: OIG11 },
   ];
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
