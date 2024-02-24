@@ -15,8 +15,8 @@ export const SegundoComponente = () => {
   ];
 
   // Estados para almacenar el monstruo seleccionado y el color elegido
-  const [seleccionado, setSeleccionado] = useState(monstruos[0]);
-  const [color, setColor] = useState('');
+  const [seleccionado, setSeleccionado] = useState(monstruos[0]); //Por defecto el 1º - Dragón
+  const [color, setColor] = useState('');                         //Por defecto sin color
 
   // Manejador de cambio para el select de monstruos
   const handleSelectChange = (e) => {
