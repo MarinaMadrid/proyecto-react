@@ -5,7 +5,8 @@ import OIG4 from '../assets/image/OIG4.jpeg';
 import OIG5 from '../assets/image/OIG5.jpg';
 import OIG6 from '../assets/image/OIG6.jpg';
 import OIG9 from '../assets/image/OIG9.jpeg';
-import OIG10 from '../assets/image/OIG12.jpeg';
+import OIG10 from '../assets/image/OIG10.jpg';
+import OIG12 from '../assets/image/OIG12.jpeg';
 
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
@@ -15,11 +16,16 @@ export const PrimerComponente = () => {
     { id: 3, nombre: 'Unicornio', imagen: OIG6 },
     { id: 4, nombre: 'Sirena', imagen: OIG9 },
     { id: 5, nombre: 'Caballito_de_mar', imagen: OIG10 },
-    { id: 6, nombre: 'No_hay_imagen', imagen: OIG11 },
+    { id: 6, nombre: 'No_hay_imagen', imagen: OIG12 },
   ];
 
+  // Excluyendo la opción con la id 6 de los nombres disponibles
+  const nombresDisponibles = animales
+    .filter((animal) => animal.id !== 6)
+    .map((animal) => animal.nombre);
+
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
-  const [seleccionado, setSeleccionado] = useState('');
+  const [seleccionado, setSeleccionado] = useState(animales[5]);
   const [color, setColor] = useState('');
   const [nombreInput, setNombreInput] = useState('');
   const [mensajeError, setMensajeError] = useState('');
@@ -75,12 +81,12 @@ export const PrimerComponente = () => {
             />
           </div>
           <br />
-          {/* Cuadro con los nombres disponibles */}
+          {/* Cuadro con los nombres disponibles (sin la opción con id 6) */}
           <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px', textAlign: 'left' }}>
             <h3 style={{ textAlign: 'center' }}>Nombres disponibles:</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {animales.map((animal) => (
-                <li key={animal.id}>{animal.nombre}</li>
+              {nombresDisponibles.map((nombre) => (
+                <li key={nombre}>{nombre}</li>
               ))}
             </ul>
           </div>
