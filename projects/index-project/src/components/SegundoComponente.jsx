@@ -11,22 +11,22 @@ export const SegundoComponente = () => {
   const monstruos = [
     { id: 1, nombre: 'Dragón', imagen: OIG1 },
     { id: 2, nombre: 'Dragones', imagen: OIG2 },
-    { id: 3, nombre: 'Monstruo_cavernas', imagen: OIG3 },
+    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
   ];
 
   // Estados para almacenar el monstruo seleccionado y el color elegido
   const [seleccionado, setSeleccionado] = useState(monstruos[0]); //Por defecto el 1º - Dragón
   const [color, setColor] = useState('');                         //Por defecto sin color
 
-  // Manejador de cambio para el select de monstruos
-  const handleSelectChange = (e) => {
-    const id = parseInt(e.target.value, 10);
-    const seleccion = monstruos.find((monstruo) => monstruo.id === id);
-    setSeleccionado(seleccion);
-  };
+// Manejador de cambio para el select de monstruos
+const elementoSeleccionado = (e) => {
+  const id = parseInt(e.target.value, 10); //Obtención del valor seleccionado. Se extrae el valor seleccionado del evento y se convierte a un número entero
+  const seleccion = monstruos.find((monstruo) => monstruo.id === id); //Búsqueda del monstruo correspondiente si es igual al existente
+  setSeleccionado(seleccion);   //Actualización del estado
+};
 
   // Manejador de cambio para el input de color
-  const handleColorChange = (e) => {
+  const colorSeleccionado = (e) => {
     setColor(e.target.value);
   };
 
@@ -40,7 +40,7 @@ export const SegundoComponente = () => {
           {/* Selección de monstruo mediante un select */}
           <div>
             <label htmlFor="monstruoSelect">Selecciona un monstruo:</label>
-            <select id="monstruoSelect" onChange={handleSelectChange} value={seleccionado.id}>
+            <select id="monstruoSelect" onChange={elementoSeleccionado} value={seleccionado.id}>
               {monstruos.map((monstruo) => (
                 <option key={monstruo.id} value={monstruo.id}>
                   {monstruo.nombre}
@@ -55,7 +55,7 @@ export const SegundoComponente = () => {
             <input
               type="color"
               id="colorInput"
-              onChange={handleColorChange}
+              onChange={colorSeleccionado}
               value={color}
             />
           </div>
