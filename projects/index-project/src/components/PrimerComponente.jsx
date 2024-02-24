@@ -15,15 +15,26 @@ export const PrimerComponente = () => {
     { id: 4, nombre: 'Sirena', imagen: OIG9 },
   ];
 
-  // Estados para almacenar el animal seleccionado y el color elegido
+  // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
   const [seleccionado, setSeleccionado] = useState(animales[0]);
   const [color, setColor] = useState('');
+  const [nombreInput, setNombreInput] = useState('');
+  const [mensajeError, setMensajeError] = useState('');
 
-  // Manejador de cambio para el select de animales
-  const handleSelectChange = (e) => {
-    const id = parseInt(e.target.value, 10);
-    const seleccion = animales.find((animal) => animal.id === id);
-    setSeleccionado(seleccion);
+  // Manejador de cambio para el input de nombre
+  const handleNombreInputChange = (e) => {
+    const nombre = e.target.value;
+    setNombreInput(nombre);
+
+    // Buscar el animal por nombre
+    const seleccion = animales.find((animal) => animal.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (seleccion) {
+      setSeleccionado(seleccion);
+      setMensajeError('');
+    } else {
+      setMensajeError('¡Este animal no está disponible!');
+    }
   };
 
   // Manejador de cambio para el input de color
@@ -36,18 +47,18 @@ export const PrimerComponente = () => {
     <div>
       <h1>Animales fantásticos</h1>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        {/* Columna para el select y el input de color */}
+        {/* Columna para el input de nombre y el input de color */}
         <div style={{ marginRight: '20px' }}>
-          {/* Selección de animal mediante un select */}
+          {/* Input para introducir el nombre del animal */}
           <div>
-            <label htmlFor="animaleselect">Selecciona un animal:</label>
-            <select id="animaleselect" onChange={handleSelectChange} value={seleccionado.id}>
-              {animales.map((animal) => (
-                <option key={animal.id} value={animal.id}>
-                  {animal.nombre}
-                </option>
-              ))}
-            </select>
+            <label htmlFor="nombreInput">Introduce el nombre del animal:</label>
+            <input
+              type="text"
+              id="nombreInput"
+              onChange={handleNombreInputChange}
+              value={nombreInput}
+            />
+            {mensajeError && <p style={{ color: 'red' }}>{mensajeError}</p>}
           </div>
           <br />
           {/* Selección de color mediante un input de tipo color */}
@@ -60,6 +71,16 @@ export const PrimerComponente = () => {
               value={color}
             />
           </div>
+          <br />
+          {/* Cuadro con los nombres disponibles */}
+          <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+            <h3>Nombres disponibles:</h3>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              {animales.map((animal) => (
+                <li key={animal.id}>{animal.nombre}</li>
+              ))}
+            </ul>
+          </div>
         </div>
         {/* Visualización del animal seleccionado con el color elegido */}
         <div>
@@ -67,7 +88,11 @@ export const PrimerComponente = () => {
           <img
             src={seleccionado.imagen}
             alt={seleccionado.nombre}
-            style={{ border: `5px solid ${color}`, width: '100vh', height: '90vh' }}
+            style={{
+              boxShadow: `0 0 20px ${color}`, // Aumenté el valor a 20px para intensificar el borde
+              width: '100vh',
+              height: '90vh',
+            }}
           />
         </div>
       </div>
