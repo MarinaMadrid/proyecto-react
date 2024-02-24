@@ -8,7 +8,7 @@ export const SegundoComponente = () => {
   const monstruos = [
     { id: 1, nombre: 'Dragón', imagen: OIG1 },
     { id: 2, nombre: 'Dragones', imagen: OIG2 },
-    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG2 },
+    { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
   ];
 
   const [seleccionado, setSeleccionado] = useState(monstruos[0]);
