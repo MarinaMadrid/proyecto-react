@@ -12,18 +12,18 @@ import OIG13 from '../assets/image/OIG13.jpg';
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
   const animales = [
-    { id: 1, nombre: 'No hay imagen', imagen: OIG12 },
-    { id: 2, nombre: 'Bichito', imagen: OIG4 },
-    { id: 3, nombre: 'Hipogrifo', imagen: OIG5 },
-    { id: 4, nombre: 'Unicornio', imagen: OIG6 },
-    { id: 5, nombre: 'Sirena', imagen: OIG9 },
-    { id: 6, nombre: 'Caballito de mar', imagen: OIG10 },
-    { id: 7, nombre: 'Medusa', imagen: OIG13 },
+    { id: 0, nombre: 'No hay imagen', imagen: OIG12 },
+    { id: 1, nombre: 'Bichito', imagen: OIG4 },
+    { id: 2, nombre: 'Hipogrifo', imagen: OIG5 },
+    { id: 3, nombre: 'Unicornio', imagen: OIG6 },
+    { id: 4, nombre: 'Sirena', imagen: OIG9 },
+    { id: 5, nombre: 'Caballito de mar', imagen: OIG10 },
+    { id: 6, nombre: 'Medusa', imagen: OIG13 },
   ];
 
   // Excluyendo la opción con la id 1 de los nombres disponibles
   const nombresDisponibles = animales
-    .filter((animal) => animal.id !== 1)
+    .filter((animal) => animal.id !== 0)
     .map((animal) => animal.nombre.toLowerCase());
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
