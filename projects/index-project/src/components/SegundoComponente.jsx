@@ -15,19 +15,19 @@ export const SegundoComponente = () => {
   ];
 
   // Estados para almacenar el monstruo seleccionado y el color elegido
-  const [seleccionado, setSeleccionado] = useState(monstruos[0]); //Por defecto el 1º - Dragón
-  const [color, setColor] = useState('');                         //Por defecto sin color
+  const [seleccionado, modificarSeleccion] = useState(monstruos[0]); //Por defecto el 1º - Dragón
+  const [color, modificarColor] = useState('');                         //Por defecto sin color
 
 // Manejador de cambio para el select de monstruos
 const elementoSeleccionado = (e) => {
   const id = parseInt(e.target.value, 10); //Obtención del valor seleccionado. Se extrae el valor seleccionado del evento y se convierte a un número entero
   const seleccion = monstruos.find((monstruo) => monstruo.id === id); //Búsqueda del monstruo correspondiente si es igual al existente
-  setSeleccionado(seleccion);   //Actualización del estado
+  modificarSeleccion(seleccion);   //Actualización del estado
 };
 
   // Manejador de cambio para el input de color
   const colorSeleccionado = (e) => {
-    setColor(e.target.value);
+    modificarColor(e.target.value);
   };
 
   // Renderizado del componente
@@ -35,7 +35,6 @@ const elementoSeleccionado = (e) => {
     <div>
       <h1>Monstruos</h1>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        {/* Columna para el select y el input de color */}
         <div style={{ marginRight: '20px' }}>
           {/* Selección de monstruo mediante un select */}
           <div>
