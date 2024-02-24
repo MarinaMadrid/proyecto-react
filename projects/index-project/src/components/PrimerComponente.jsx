@@ -12,22 +12,22 @@ import OIG13 from '../assets/image/OIG13.jpg';
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
   const animales = [
-    { id: 1, nombre: 'Bichito', imagen: OIG4 },
-    { id: 2, nombre: 'Hipogrifo', imagen: OIG5 },
-    { id: 3, nombre: 'Unicornio', imagen: OIG6 },
-    { id: 4, nombre: 'Sirena', imagen: OIG9 },
-    { id: 5, nombre: 'Caballito de mar', imagen: OIG10 },
-    { id: 6, nombre: 'No hay imagen', imagen: OIG12 },
+    { id: 1, nombre: 'No hay imagen', imagen: OIG12 },
+    { id: 2, nombre: 'Bichito', imagen: OIG4 },
+    { id: 3, nombre: 'Hipogrifo', imagen: OIG5 },
+    { id: 4, nombre: 'Unicornio', imagen: OIG6 },
+    { id: 5, nombre: 'Sirena', imagen: OIG9 },
+    { id: 6, nombre: 'Caballito de mar', imagen: OIG10 },
     { id: 7, nombre: 'Medusa', imagen: OIG13 },
   ];
 
-  // Excluyendo la opción con la id 6 de los nombres disponibles
+  // Excluyendo la opción con la id 1 de los nombres disponibles
   const nombresDisponibles = animales
-    .filter((animal) => animal.id !== 6)
+    .filter((animal) => animal.id !== 1)
     .map((animal) => animal.nombre.toLowerCase());
 
   // Estados para almacenar el animal seleccionado, el color elegido y el nombre introducido
-  const [seleccionado, setSeleccionado] = useState(animales[5]);
+  const [seleccionado, setSeleccionado] = useState(animales[0]);
   const [color, setColor] = useState('');
   const [nombreInput, setNombreInput] = useState('');
   const [mensajeError, setMensajeError] = useState('');
@@ -88,7 +88,7 @@ export const PrimerComponente = () => {
             />
           </div>
           <br />
-          {/* Cuadro con los nombres disponibles (sin la opción con id 6) */}
+          {/* Cuadro con los nombres disponibles (sin la opción con id 1) */}
           <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px', textAlign: 'left' }}>
             <h3 style={{ textAlign: 'center' }}>Nombres disponibles:</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
