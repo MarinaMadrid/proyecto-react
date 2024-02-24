@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 
+// Importamos imágenes
 import OIG1 from '../assets/image/OIG1.jpeg';
 import OIG2 from '../assets/image/OIG2.jpeg';
 import OIG3 from '../assets/image/OIG3.jpeg';
 
+// Almacenar las imágenes en un array
 export const SegundoComponente = () => {
   const monstruos = [
     { id: 1, nombre: 'Dragón', imagen: OIG1 },
     { id: 2, nombre: 'Dragones', imagen: OIG2 },
     { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
   ];
+
 
   const [seleccionado, setSeleccionado] = useState(monstruos[0]);
   const [color, setColor] = useState('');
@@ -51,7 +54,7 @@ export const SegundoComponente = () => {
         <img
           src={seleccionado.imagen}
           alt={seleccionado.nombre}
-          style={{ border: `5px solid ${color}` }}
+          style={{ border: `5px solid ${color}`, width: '100vh', height: '90vh' }}
         />
       </div>
     </div>
