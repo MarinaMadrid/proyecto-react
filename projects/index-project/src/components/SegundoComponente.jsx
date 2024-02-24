@@ -7,6 +7,7 @@ import OIG3 from '../assets/image/OIG3.jpeg';
 import OIG11 from '../assets/image/OIG11.jpeg'; // Opción por defecto
 import OIG14 from '../assets/image/OIG14.jpeg';
 import OIG15 from '../assets/image/OIG15.jpeg';
+import OIG16 from '../assets/image/OIG16.jpeg';
 
 // Componente que muestra una lista de monstruos con la posibilidad de seleccionar uno y cambiar su color
 export const SegundoComponente = () => {
@@ -18,6 +19,7 @@ export const SegundoComponente = () => {
     { id: 3, nombre: 'Monstruo de las cavernas', imagen: OIG3 },
     { id: 4, nombre: 'Dragón perrito', imagen: OIG14 },
     { id: 5, nombre: 'Dragón pájaro', imagen: OIG15 },
+    { id: 6, nombre: 'Dinosaurio plumero', imagen: OIG16 },
   ];
 
   // Estados para almacenar el monstruo seleccionado y el color elegido
