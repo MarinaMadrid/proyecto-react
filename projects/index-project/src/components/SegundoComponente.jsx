@@ -9,6 +9,9 @@ import OIG14 from '../assets/image/OIG14.jpeg';
 import OIG15 from '../assets/image/OIG15.jpeg';
 import OIG16 from '../assets/image/OIG16.jpeg';
 
+import Navbar from './Navbar';
+import Footer from './Footer';
+
 // Componente que muestra una lista de monstruos con la posibilidad de seleccionar uno y cambiar su color
 export const SegundoComponente = () => {
   // Array de monstruos con sus datos, incluyendo id, nombre, e imagen
@@ -41,6 +44,7 @@ export const SegundoComponente = () => {
   // Renderizado del componente
   return (
     <div>
+      <Navbar />
       <div style={{ display: 'flex', alignItems: 'center' }}>  {/* Centramos */}
         <div style={{ marginRight: '20px' }}>
           {/* Selección de monstruo mediante un select */}
@@ -71,6 +75,7 @@ export const SegundoComponente = () => {
             alt={seleccionado.nombre}
             style={{ border: `5px solid ${color}`, width: '100vh', height: '90vh' }}
           />
+          <Footer />
         </div>
       </div>
     </div>

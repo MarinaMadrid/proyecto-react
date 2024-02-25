@@ -9,6 +9,9 @@ import OIG10 from '../assets/image/OIG10.jpg';
 import OIG12 from '../assets/image/OIG12.jpeg';
 import OIG13 from '../assets/image/OIG13.jpg';
 
+import Navbar from './Navbar';
+import Footer from './Footer';
+
 // Almacenar las imágenes en un array
 export const PrimerComponente = () => {
   const animales = [
@@ -61,6 +64,7 @@ export const PrimerComponente = () => {
   // Renderizado del componente
   return (
     <div>
+      <Navbar />
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Columna para el input de nombre y el input de color */}
         <div style={{ marginRight: '20px', textAlign: 'center' }}>
@@ -110,6 +114,7 @@ export const PrimerComponente = () => {
               height: '90vh',
             }}
           />
+          <Footer />
         </div>
       </div>
     </div>
