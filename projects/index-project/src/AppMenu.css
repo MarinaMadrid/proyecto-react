@@ -1,0 +1,28 @@
+#root {
+    margin: 0;
+  }
+  
+  /* Asegúrate de que el contenedor padre utilice todo el ancho disponible y no tenga margen */
+  .contenedorImagenes {
+    display: flex; /* Distribuye horizontalmente */
+    width: 100vw; /* Utiliza el 100% del ancho de la ventana */
+    height: 100vh; /* Altura para que ocupe la ventana completa */
+    margin: 0; /* Remover cualquier margen */
+    padding: 0; /* Remover cualquier padding */
+    overflow: hidden; /* Oculta cualquier contenido fuera del área visible */
+  }
+  
+  .imagenInteractiva {
+    cursor: pointer;
+    width: 50%; /* Cada imagen ocupa la mitad del ancho del contenedor */
+    height: 100%; /* Altura completa del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    transition: filter 0.5s ease, transform 0.5s ease; /* Suaviza las transiciones */
+    filter: blur(8px); /* Desenfoque inicial */
+  }
+  
+  .imagenInteractiva:hover {
+    filter: blur(0); /* Claridad al pasar el mouse */
+    transform: scale(1.05); /* Zoom sin aumentar el espacio que ocupa */
+  }
+  
