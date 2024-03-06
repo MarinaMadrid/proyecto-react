@@ -13,7 +13,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 // Componente que muestra una lista de monstruos con la posibilidad de seleccionar uno y cambiar su color
-export const SegundoComponente = () => {
+export const SegundoComponente = ({ irAlMenu }) => {
   // Array de monstruos con sus datos, incluyendo id, nombre, e imagen
   const monstruos = [
     { id: 0, nombre: 'Selecciona una imagen', imagen: OIG11 }, // Opción por defecto
@@ -47,8 +47,10 @@ export const SegundoComponente = () => {
       <Navbar />
       <div style={{ display: 'flex', alignItems: 'center' }}>  {/* Centramos */}
         <div style={{ marginRight: '20px' }}>
+          <button onClick={irAlMenu} style={{ marginBottom: '15px' }}>Volver al Menú</button>
           {/* Selección de monstruo mediante un select */}
           <div>
+            
             <label htmlFor="monstruoSelect">Selecciona un monstruo:</label>
             <select id="monstruoSelect" onChange={elementoSeleccionado} value={seleccionado.id}> {/* onChange -> Ejecutamos cuando hay cambios y value guarda el id del seleccionado */}
               {/* Realiza con map una búsqueda y selecciona el monstruo elegido que contenga la id y lo almacena en el value para mostrar */}

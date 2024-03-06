@@ -13,7 +13,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 // Almacenar las imágenes en un array
-export const PrimerComponente = () => {
+export const PrimerComponente = ({ irAlMenu }) => {
   const animales = [
     { id: 0, nombre: 'No hay imagen', imagen: OIG12 },
     { id: 1, nombre: 'Bichito', imagen: OIG4 },
@@ -68,6 +68,7 @@ export const PrimerComponente = () => {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Columna para el input de nombre y el input de color */}
         <div style={{ marginRight: '20px', textAlign: 'center' }}>
+          <button onClick={irAlMenu} style={{ marginBottom: '15px' }}>Volver al Menú</button>
           {/* Input para introducir el nombre del animal */}
           <div>
             <label htmlFor="nombreInput">Introduce el nombre del animal:</label>
