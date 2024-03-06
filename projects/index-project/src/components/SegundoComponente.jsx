@@ -43,7 +43,7 @@ export const SegundoComponente = ({ irAlMenu }) => {
 
   // Renderizado del componente
   return (
-    <div>
+    <div className='component'>
       <Navbar />
       <div style={{ display: 'flex', alignItems: 'center' }}>  {/* Centramos */}
         <div style={{ marginRight: '20px' }}>

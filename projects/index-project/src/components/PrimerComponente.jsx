@@ -63,7 +63,7 @@ export const PrimerComponente = ({ irAlMenu }) => {
 
   // Renderizado del componente
   return (
-    <div>
+    <div className='component'>
       <Navbar />
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Columna para el input de nombre y el input de color */}
