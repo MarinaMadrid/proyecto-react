@@ -16,10 +16,8 @@ function App() {
     <div>
       {paginaActual === 'menu' && (
         <div className="contenedorImagenes" style={{display: 'flex', height: '100vh', overflow: 'hidden'}} >
-          {/* Imagen para ir al Primer Componente */}
+          <div className="tituloCentral">Criaturas fantásticas</div>
           <img src={OIG6} alt="Ir a Primer Componente" onClick={irAPrimerComponente} className="imagenInteractiva" />
-
-          {/* Imagen para ir al Segundo Componente */}
           <img src={OIG15} alt="Ir a Segundo Componente" onClick={irASegundoComponente} className="imagenInteractiva" />
         </div>
       )}
